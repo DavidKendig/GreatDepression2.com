@@ -382,8 +382,8 @@ let pdfViewer;
 
 function openPDF(pdfPath) {
     const titles = {
-        'Great_Depression_2_Ch_1.pdf': 'Great Depression 2 - Chapter 1',
-        'Great_Depression_2_Ch_2.pdf': 'Great Depression 2 - Chapter 2'
+        'docs/Great_Depression_2_Ch_1.pdf': 'Great Depression 2 - Chapter 1',
+        'docs/Great_Depression_2_Ch_2.pdf': 'Great Depression 2 - Chapter 2'
     };
 
     const title = titles[pdfPath] || 'PDF Viewer';

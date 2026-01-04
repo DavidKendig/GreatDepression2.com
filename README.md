@@ -16,8 +16,8 @@ A modern, responsive website recreating the content from greatdepression2.com wi
 - `index.html` - Main HTML structure
 - `styles.css` - Modern CSS styling with animations
 - `app.js` - JavaScript for interactivity and PDF viewing
-- `Great_Depression_2_Ch_1.pdf` - Chapter 1 PDF
-- `Great_Depression_2_Ch_2.pdf` - Chapter 2 PDF
+- `docs/Great_Depression_2_Ch_1.pdf` - Chapter 1 PDF
+- `docs/Great_Depression_2_Ch_2.pdf` - Chapter 2 PDF
 
 ## How to Use
 
