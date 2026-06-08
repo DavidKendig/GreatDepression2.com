@@ -516,6 +516,24 @@ a:hover {
 /* ===================================
    Contact Form
    =================================== */
+.contact-phone {
+    display: inline-flex;
+    align-items: center;
+    color: var(--primary-blue);
+    text-decoration: none;
+    margin-bottom: 1.5rem;
+    transition: var(--transition);
+}
+
+.contact-phone:hover {
+    color: var(--dark-blue);
+}
+
+.contact-phone svg {
+    max-width: 100%;
+    height: auto;
+}
+
 .contact-form {
     max-width: 600px;
 }
