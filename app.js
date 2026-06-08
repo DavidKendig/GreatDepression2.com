@@ -439,8 +439,35 @@ class App {
         // Update copyright year
         this.updateCopyrightYear();
 
+        // Reveal the (obfuscated) contact phone number
+        this.setupContactPhone();
+
         // Add loading complete class
         document.body.classList.add('loaded');
+    }
+
+    setupContactPhone() {
+        const link = document.getElementById('contactPhone');
+        if (!link) return;
+
+        // The number is stored as a char-code array offset by KEY so that no
+        // phone-like digit sequence ever appears in the HTML or JS source.
+        // Decoding requires running JS, which keeps it away from regex scrapers
+        // and robocall harvesters that only read static page source.
+        const KEY = 7;
+        const encoded = [56, 60, 63, 60, 58, 55, 60, 58, 58, 64, 64];
+        const digits = encoded.map(c => String.fromCharCode(c - KEY)).join(''); // e.g. 1XXXXXXXXXX (incl. country code)
+        const national = digits.slice(1);
+        const display = `${national.slice(0, 3)}-${national.slice(3, 6)}-${national.slice(6)}`;
+
+        link.setAttribute('href', `tel:+${digits}`);
+        link.setAttribute('aria-label', `Call ${display}`);
+
+        const svg = link.querySelector('svg');
+        if (svg) svg.setAttribute('aria-label', `Phone number ${display}`);
+
+        const textEl = document.getElementById('contactPhoneText');
+        if (textEl) textEl.textContent = display;
     }
 
     updateCopyrightYear() {
